@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "RickAndMortyAPI",
+        "repositoryURL": "https://github.com/erikfloresq/RickAndMortyAPI.git",
+        "state": {
+          "branch": null,
+          "revision": "293465a84d0db81bb671628ad7818c1262edf181",
+          "version": "0.0.3"
+        }
+      }
+    ]
+  },
+  "version": 1
+}
