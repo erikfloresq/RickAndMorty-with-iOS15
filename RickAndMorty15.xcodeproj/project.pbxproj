@@ -22,6 +22,7 @@
 		08478BB7267050CD00C3854C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		08478BBA267050CD00C3854C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		08478BC42670515000C3854C /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		08FF23852670D8A2000A08C3 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,6 +40,7 @@
 		08478BA7267050CD00C3854C = {
 			isa = PBXGroup;
 			children = (
+				08FF23852670D8A2000A08C3 /* README.md */,
 				08478BB2267050CD00C3854C /* RickAndMorty15 */,
 				08478BB1267050CD00C3854C /* Products */,
 			);
