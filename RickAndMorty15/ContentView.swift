@@ -11,19 +11,25 @@ struct ContentView: View {
     @ObservedObject var viewModel = ViewModel()
 
     var body: some View {
-        List {
-            ForEach(viewModel.characters) { character in
-                HStack {
-                    AsyncImage(url: URL(string: character.image)!) { image in
-                        image.resizable().frame(width: 100, height: 100)
-                    } placeholder: {
-                        Rectangle().frame(width: 100, height: 100)
+        NavigationView {
+            List {
+                ForEach(viewModel.characters) { character in
+                    HStack {
+                        AsyncImage(url: URL(string: character.image)!) { image in
+                            image.resizable().frame(width: 100, height: 100)
+                        } placeholder: {
+                            Rectangle().frame(width: 100, height: 100)
+                        }
+                        Text(character.name)
                     }
-                    Text(character.name)
                 }
             }
-        }.onAppear {
-            viewModel.getCharacter()
+            .navigationTitle("Async Await")
+        }
+        .onAppear {
+            async {
+                try await viewModel.getCharacter()
+            }
         }
     }
 }
