@@ -1,5 +1,5 @@
 //
-//  ViewModel.swift
+//  CharacterListViewModel.swift
 //  RickAndMorty15
 //
 //  Created by Erik Flores on 8/6/21.
@@ -9,7 +9,7 @@ import Foundation
 import RickAndMortyAPI
 import Combine
 
-class ViewModel: ObservableObject {
+class CharacterListViewModel: ObservableObject {
     let rickAndMortyAPI = RickAndMortyAPI()
     @Published var characters = [Character]()
     //var cancellable = Set<AnyCancellable>()
