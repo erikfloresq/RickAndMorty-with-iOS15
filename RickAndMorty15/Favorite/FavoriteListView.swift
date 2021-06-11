@@ -9,12 +9,14 @@ import SwiftUI
 import RickAndMortyAPI
 
 struct FavoriteListView: View {
-    @ObservedObject var viewModel: FavoriteListViewModel
+    @EnvironmentObject var viewModel: FavoriteListViewModel
 
     var body: some View {
         NavigationView {
-            ForEach(viewModel.favorites) { character in
-                CharacterCell(character: character)
+            List {
+                ForEach(viewModel.favorites) { character in
+                    CharacterCell(character: character)
+                }
             }
             .navigationTitle("Favorites")
         }

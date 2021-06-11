@@ -9,7 +9,8 @@ import SwiftUI
 import RickAndMortyAPI
 
 struct CharacterListView: View {
-    @StateObject var viewModel = CharacterListViewModel()
+    @EnvironmentObject var viewModel: CharacterListViewModel
+    @EnvironmentObject var favoriteViewModel: FavoriteListViewModel
     @State private var searchText: String = ""
 
     var body: some View {
@@ -19,13 +20,25 @@ struct CharacterListView: View {
                     CharacterCell(character: character)
                 }
             }
-            .searchable(text: $searchText)
+            .searchable(text: $searchText) {
+                ForEach(resultSearch) { character in
+                    CharacterCell(character: character)
+                }
+            }
             .navigationTitle("Rick&Morty")
         }
         .onAppear {
             async {
                 try await viewModel.getCharacter()
             }
+        }
+    }
+
+    var resultSearch: [Character] {
+        if searchText.isEmpty {
+            return viewModel.characters
+        } else {
+            return viewModel.characters.filter { $0.name.contains(searchText) }
         }
     }
 }

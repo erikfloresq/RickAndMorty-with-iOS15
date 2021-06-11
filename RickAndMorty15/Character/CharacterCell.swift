@@ -10,6 +10,7 @@ import RickAndMortyAPI
 
 struct CharacterCell: View {
     let character: Character
+    @EnvironmentObject var favoriteViewModel: FavoriteListViewModel
 
     var body: some View {
         HStack {
@@ -27,7 +28,7 @@ struct CharacterCell: View {
             Text(character.name)
         }.swipeActions {
             Button {
-                print("Add to fav")
+                favoriteViewModel.addFavorite(character: character)
             } label: {
                 Image(systemName: "star")
                 Text("Favorite")
@@ -38,6 +39,6 @@ struct CharacterCell: View {
 
 //struct CharacterCell_Previews: PreviewProvider {
 //    static var previews: some View {
-//        CharacterCell(character: Character(from: <#Decoder#>))
+//        CharacterCell(character: Character(from: decoder?!!))
 //    }
 //}
