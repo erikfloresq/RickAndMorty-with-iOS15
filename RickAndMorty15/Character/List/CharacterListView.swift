@@ -10,7 +10,7 @@ import RickAndMortyAPI
 
 struct CharacterListView: View {
     @EnvironmentObject var viewModel: CharacterListViewModel
-    //@EnvironmentObject var favoriteViewModel: FavoriteListViewModel
+    @EnvironmentObject var favoriteViewModel: FavoriteListViewModel
     @State private var searchText: String = ""
 
     var body: some View {

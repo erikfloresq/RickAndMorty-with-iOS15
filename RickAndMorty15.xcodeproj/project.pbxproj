@@ -19,6 +19,7 @@
 		0851172D267633D2002D622A /* CharacterItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0851172C267633D2002D622A /* CharacterItem.swift */; };
 		08511735267637FF002D622A /* RickAndMorty15Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08511734267637FF002D622A /* RickAndMorty15Tests.swift */; };
 		0851173B267638C6002D622A /* Character.json in Resources */ = {isa = PBXBuildFile; fileRef = 08511728267443F4002D622A /* Character.json */; };
+		0851173E267693F0002D622A /* FavoriteGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0851173D267693F0002D622A /* FavoriteGridView.swift */; };
 		08FF2387267236EA000A08C3 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08FF2386267236EA000A08C3 /* MainView.swift */; };
 		08FF238926723749000A08C3 /* FavoriteListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08FF238826723749000A08C3 /* FavoriteListView.swift */; };
 		08FF238D26723D12000A08C3 /* CharacterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08FF238C26723D12000A08C3 /* CharacterCell.swift */; };
@@ -49,6 +50,8 @@
 		0851172C267633D2002D622A /* CharacterItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterItem.swift; sourceTree = "<group>"; };
 		08511732267637FF002D622A /* RickAndMorty15Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RickAndMorty15Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		08511734267637FF002D622A /* RickAndMorty15Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RickAndMorty15Tests.swift; sourceTree = "<group>"; };
+		0851173C267656B1002D622A /* RickAndMorty15.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = RickAndMorty15.entitlements; sourceTree = "<group>"; };
+		0851173D267693F0002D622A /* FavoriteGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteGridView.swift; sourceTree = "<group>"; };
 		08FF23852670D8A2000A08C3 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		08FF2386267236EA000A08C3 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		08FF238826723749000A08C3 /* FavoriteListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteListView.swift; sourceTree = "<group>"; };
@@ -97,6 +100,7 @@
 		08478BB2267050CD00C3854C /* RickAndMorty15 */ = {
 			isa = PBXGroup;
 			children = (
+				0851173C267656B1002D622A /* RickAndMorty15.entitlements */,
 				08478BB3267050CD00C3854C /* RickAndMorty15App.swift */,
 				08FF2386267236EA000A08C3 /* MainView.swift */,
 				0851172526743F63002D622A /* DetailCharacterView */,
@@ -142,14 +146,46 @@
 			path = RickAndMorty15Tests;
 			sourceTree = "<group>";
 		};
-		08FF238A2672376E000A08C3 /* Character */ = {
+		08511741267696A7002D622A /* List */ = {
 			isa = PBXGroup;
 			children = (
 				08478BB5267050CD00C3854C /* CharacterListView.swift */,
-				0851172A26763025002D622A /* CharacterGridView.swift */,
-				08478BC42670515000C3854C /* CharacterListViewModel.swift */,
 				08FF238C26723D12000A08C3 /* CharacterCell.swift */,
+			);
+			path = List;
+			sourceTree = "<group>";
+		};
+		08511742267696AD002D622A /* Grid */ = {
+			isa = PBXGroup;
+			children = (
+				0851172A26763025002D622A /* CharacterGridView.swift */,
 				0851172C267633D2002D622A /* CharacterItem.swift */,
+			);
+			path = Grid;
+			sourceTree = "<group>";
+		};
+		08511743267696B2002D622A /* Grid */ = {
+			isa = PBXGroup;
+			children = (
+				0851173D267693F0002D622A /* FavoriteGridView.swift */,
+			);
+			path = Grid;
+			sourceTree = "<group>";
+		};
+		08511744267696B8002D622A /* List */ = {
+			isa = PBXGroup;
+			children = (
+				08FF238826723749000A08C3 /* FavoriteListView.swift */,
+			);
+			path = List;
+			sourceTree = "<group>";
+		};
+		08FF238A2672376E000A08C3 /* Character */ = {
+			isa = PBXGroup;
+			children = (
+				08511742267696AD002D622A /* Grid */,
+				08511741267696A7002D622A /* List */,
+				08478BC42670515000C3854C /* CharacterListViewModel.swift */,
 			);
 			path = Character;
 			sourceTree = "<group>";
@@ -157,7 +193,8 @@
 		08FF238B26723776000A08C3 /* Favorite */ = {
 			isa = PBXGroup;
 			children = (
-				08FF238826723749000A08C3 /* FavoriteListView.swift */,
+				08511744267696B8002D622A /* List */,
+				08511743267696B2002D622A /* Grid */,
 				08FF238E26723D53000A08C3 /* FavoriteListViewModel.swift */,
 			);
 			path = Favorite;
@@ -272,6 +309,7 @@
 			files = (
 				0851172726744374002D622A /* CharacterMock.swift in Sources */,
 				0851172426743F5D002D622A /* DetalleCharacterView.swift in Sources */,
+				0851173E267693F0002D622A /* FavoriteGridView.swift in Sources */,
 				08478BB6267050CD00C3854C /* CharacterListView.swift in Sources */,
 				08FF238926723749000A08C3 /* FavoriteListView.swift in Sources */,
 				08FF238F26723D53000A08C3 /* FavoriteListViewModel.swift in Sources */,
@@ -424,6 +462,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = RickAndMorty15/RickAndMorty15.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"RickAndMorty15/Preview Content\"";
@@ -443,6 +482,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = dev.erikflores.RickAndMorty15;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -454,6 +494,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = RickAndMorty15/RickAndMorty15.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"RickAndMorty15/Preview Content\"";
@@ -473,6 +514,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = dev.erikflores.RickAndMorty15;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

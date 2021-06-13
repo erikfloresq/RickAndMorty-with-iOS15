@@ -10,6 +10,7 @@ import RickAndMortyAPI
 
 struct CharacterItem: View {
     let character: Character
+    @EnvironmentObject var favoriteViewModel: FavoriteListViewModel
 
     var body: some View {
         ZStack {
@@ -41,17 +42,23 @@ struct CharacterItem: View {
               minHeight: 100,
               maxHeight: 300)
        .padding()
+       .contextMenu {
+           Button {
+               favoriteViewModel.addFavorite(character: character)
+           } label: {
+               Image(systemName: "star")
+               Text("Favorite")
+           }
+       }
     }
 }
 
 struct CharacterItem_Previews: PreviewProvider {
+    static let character = CharacterMock.getCharacter()!
+
     static var previews: some View {
-        if let character = CharacterMock.getCharacter() {
-            CharacterItem(character: character)
-                .previewLayout(.sizeThatFits)
-        } else {
-            EmptyView()
-        }
+        CharacterItem(character: character)
+                        .previewLayout(.sizeThatFits)
 
     }
 }

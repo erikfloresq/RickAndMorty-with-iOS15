@@ -10,11 +10,14 @@ import RickAndMortyAPI
 
 struct CharacterGridView: View {
     @EnvironmentObject var viewModel: CharacterListViewModel
+    @EnvironmentObject var favoriteViewModel: FavoriteListViewModel
     @State private var searchText: String = ""
-    let columns = [GridItem(.flexible(minimum: 100, maximum: 300)),
-                   GridItem(.flexible(minimum: 100, maximum: 300)),
-                   GridItem(.flexible(minimum: 100, maximum: 300)),
-                   GridItem(.flexible(minimum: 100, maximum: 300))]
+    let columns = [
+        GridItem(.flexible(minimum: 100, maximum: 300)),
+        GridItem(.flexible(minimum: 100, maximum: 300)),
+        GridItem(.flexible(minimum: 100, maximum: 300)),
+        GridItem(.flexible(minimum: 100, maximum: 300))
+    ]
 
     var body: some View {
         ScrollView(.vertical) {
@@ -27,13 +30,21 @@ struct CharacterGridView: View {
         .searchable(text: $searchText) {
             ForEach(resultSearch) { character in
                 CharacterCell(character: character)
+                    .contextMenu {
+                        Button {
+                            favoriteViewModel.addFavorite(character: character)
+                        } label: {
+                            Image(systemName: "star")
+                            Text("Favorite")
+                        }
+                    }
             }
         }
         .onAppear {
-//            async {
-//                try await viewModel.getCharacter()
-//            }
-            viewModel.getCharacter()
+            async {
+                try await viewModel.getCharacter()
+            }
+            //viewModel.getCharacter()
         }
     }
 
