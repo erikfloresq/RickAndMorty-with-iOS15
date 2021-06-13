@@ -9,23 +9,31 @@ import SwiftUI
 
 struct MainView: View {
     @StateObject var characterViewModel = CharacterListViewModel()
-    @StateObject var favoriteViewModel = FavoriteListViewModel()
+    //@StateObject var favoriteViewModel = FavoriteListViewModel()
 
     var body: some View {
-        TabView {
+        if UIDevice.current.userInterfaceIdiom == .pad {
+            CharacterGridView()
+                .environmentObject(characterViewModel)
+        } else {
             CharacterListView()
                 .environmentObject(characterViewModel)
-                .environmentObject(favoriteViewModel)
-                .tabItem {
-                    Image(systemName: "person")
-                    Text("Characters")
-                }
-            FavoriteListView()
-                .environmentObject(favoriteViewModel)
-                .tabItem {
-                    Image(systemName: "star")
-                    Text("Favorites")
-                }
         }
     }
 }
+
+//        TabView {
+//            CharacterListView()
+//                .environmentObject(characterViewModel)
+//                .environmentObject(favoriteViewModel)
+//                .tabItem {
+//                    Image(systemName: "person")
+//                    Text("Characters")
+//                }
+//            FavoriteListView()
+//                .environmentObject(favoriteViewModel)
+//                .tabItem {
+//                    Image(systemName: "star")
+//                    Text("Favorites")
+//                }
+//        }
