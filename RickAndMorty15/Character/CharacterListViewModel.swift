@@ -13,12 +13,12 @@ class CharacterListViewModel: ObservableObject {
     let rickAndMortyAPI = RickAndMortyAPI()
     @Published var characters = [Character]()
 
-    func getCharacter() async throws {
+    func getCharacter() async {
         do {
             let resultApi = try await rickAndMortyAPI.getCharacter()
             characters = resultApi.results
         } catch(let error) {
-            throw error
+            print(error)
         }
     }
 }

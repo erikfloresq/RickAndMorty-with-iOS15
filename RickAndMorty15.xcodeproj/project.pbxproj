@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		08287EE82699D7E400B8C4FC /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08287EE72699D7E400B8C4FC /* ErrorView.swift */; };
 		08478BB4267050CD00C3854C /* RickAndMorty15App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08478BB3267050CD00C3854C /* RickAndMorty15App.swift */; };
 		08478BB6267050CD00C3854C /* CharacterListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08478BB5267050CD00C3854C /* CharacterListView.swift */; };
 		08478BB8267050CD00C3854C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 08478BB7267050CD00C3854C /* Assets.xcassets */; };
@@ -37,6 +38,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		08287EE72699D7E400B8C4FC /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
 		08478BB0267050CD00C3854C /* RickAndMorty15.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RickAndMorty15.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		08478BB3267050CD00C3854C /* RickAndMorty15App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RickAndMorty15App.swift; sourceTree = "<group>"; };
 		08478BB5267050CD00C3854C /* CharacterListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterListView.swift; sourceTree = "<group>"; };
@@ -186,6 +188,7 @@
 				08511742267696AD002D622A /* Grid */,
 				08511741267696A7002D622A /* List */,
 				08478BC42670515000C3854C /* CharacterListViewModel.swift */,
+				08287EE72699D7E400B8C4FC /* ErrorView.swift */,
 			);
 			path = Character;
 			sourceTree = "<group>";
@@ -318,6 +321,7 @@
 				08FF238D26723D12000A08C3 /* CharacterCell.swift in Sources */,
 				08478BC52670515000C3854C /* CharacterListViewModel.swift in Sources */,
 				08478BB4267050CD00C3854C /* RickAndMorty15App.swift in Sources */,
+				08287EE82699D7E400B8C4FC /* ErrorView.swift in Sources */,
 				0851172D267633D2002D622A /* CharacterItem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

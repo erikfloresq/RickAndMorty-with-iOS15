@@ -14,17 +14,22 @@ struct CharacterCell: View {
 
     var body: some View {
         HStack {
-            AsyncImage(url: URL(string: character.image)!) { phase in
-                if let image = phase.image {
-                    image.resizable()
-                } else if phase.error != nil {
-                    Color(.systemRed)
-                } else {
-                    Color(.systemGray2)
+            AsyncImage(url: URL(string: character.image)!, transaction: .init(animation: .spring())) { phase in
+                switch phase {
+                    case .empty:
+                        randomPlaceholderColor()
+                            .opacity(0.2)
+                            .transition(.opacity.combined(with: .scale))
+                    case .success(let image):
+                        image.resizable()
+                    case .failure(let error):
+                        ErrorView(error)
+                    @unknown default:
+                        ErrorView()
                 }
             }
             .frame(width: 100, height: 100)
-            .cornerRadius(10)
+            .mask(RoundedRectangle(cornerRadius: 16))
             Text(character.name)
         }.swipeActions {
             Button {
@@ -35,7 +40,16 @@ struct CharacterCell: View {
             }.tint(Color(.systemYellow))
         }
     }
+
+    func randomPlaceholderColor() -> Color {
+        let placeholderColors: [Color] = [
+          .red, .blue, .orange, .mint, .purple, .yellow, .green, .pink
+        ]
+
+        return placeholderColors.randomElement()!
+    }
 }
+
 
 //struct CharacterCell_Previews: PreviewProvider {
 //    static var previews: some View {

@@ -27,10 +27,8 @@ struct CharacterListView: View {
             }
             .navigationTitle("Rick&Morty")
         }
-        .onAppear {
-            async {
-                try await viewModel.getCharacter()
-            }
+        .task {
+            await viewModel.getCharacter()
         }
     }
 

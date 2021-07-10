@@ -40,11 +40,8 @@ struct CharacterGridView: View {
                     }
             }
         }
-        .onAppear {
-            async {
-                try await viewModel.getCharacter()
-            }
-            //viewModel.getCharacter()
+        .task {
+            await viewModel.getCharacter()
         }
     }
 

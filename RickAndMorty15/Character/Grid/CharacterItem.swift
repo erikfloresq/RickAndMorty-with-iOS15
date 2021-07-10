@@ -14,34 +14,41 @@ struct CharacterItem: View {
 
     var body: some View {
         ZStack {
-            AsyncImage(url: URL(string: character.image)!) { phase in
-                if let image = phase.image {
-                    image
-                        .resizable()
-                        .aspectRatio(contentMode: .fill)
-                    .cornerRadius(10)
-                    VStack {
-                        Spacer()
-                        ZStack {
-                            LinearGradient(colors: [.black, .clear], startPoint: .bottom, endPoint: .top)
-                            Text(character.name)
-                                .font(.title)
-                                .fontWeight(.bold)
-                                .foregroundColor(.white)
-                        }.frame(height: 100)
-                    }
-                } else if phase.error != nil {
-                    Color(.systemRed)
-                } else {
-                    Color(.systemGray2)
+            AsyncImage(url: URL(string: character.image)!, transaction: .init(animation: .spring())) { phase in
+                switch phase {
+                    case .empty:
+                        randomPlaceholderColor()
+                            .opacity(0.2)
+                            .transition(.opacity.combined(with: .scale))
+                    case .success(let image):
+                        image
+                            .resizable()
+                            .aspectRatio(contentMode: .fill)
+                            .transition(.opacity.combined(with: .scale))
+                    case .failure(let error):
+                        ErrorView(error)
+                    @unknown default:
+                        ErrorView()
                 }
             }
+            .frame(width: 180, height: 200)
+            VStack {
+                Spacer()
+                LinearGradient(colors: [.black, .clear], startPoint: .bottom, endPoint: .top)
+                    .frame(height: 70)
+            }
+            VStack {
+                Spacer()
+                Text(character.name)
+                    .font(.title3)
+                    .fontWeight(.bold)
+                    .foregroundColor(.white)
+                    .padding([.leading, .trailing, .bottom], 7)
+            }
         }
-        .frame(minWidth: 100,
-              maxWidth: 300,
-              minHeight: 100,
-              maxHeight: 300)
-       .padding()
+        .contentShape(RoundedRectangle(cornerRadius: 16))
+        .clipped()
+        .padding()
        .contextMenu {
            Button {
                favoriteViewModel.addFavorite(character: character)
@@ -50,6 +57,14 @@ struct CharacterItem: View {
                Text("Favorite")
            }
        }
+    }
+
+    func randomPlaceholderColor() -> Color {
+        let placeholderColors: [Color] = [
+          .red, .blue, .orange, .mint, .purple, .yellow, .green, .pink
+        ]
+
+        return placeholderColors.randomElement()!
     }
 }
 
