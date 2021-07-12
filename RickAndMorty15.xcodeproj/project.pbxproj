@@ -7,12 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0808BB55269C4D7500E04DFC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0808BB54269C4D7500E04DFC /* Assets.xcassets */; };
+		0808BB5B269C4D7600E04DFC /* WatchApp Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 0808BB5A269C4D7500E04DFC /* WatchApp Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		0808BB60269C4D7600E04DFC /* RickAndMorty15App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0808BB5F269C4D7600E04DFC /* RickAndMorty15App.swift */; };
+		0808BB62269C4D7600E04DFC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0808BB61269C4D7600E04DFC /* ContentView.swift */; };
+		0808BB64269C4D7600E04DFC /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0808BB63269C4D7600E04DFC /* NotificationController.swift */; };
+		0808BB66269C4D7600E04DFC /* NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0808BB65269C4D7600E04DFC /* NotificationView.swift */; };
+		0808BB68269C4D7600E04DFC /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0808BB67269C4D7600E04DFC /* ComplicationController.swift */; };
+		0808BB6A269C4D7600E04DFC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0808BB69269C4D7600E04DFC /* Assets.xcassets */; };
+		0808BB6D269C4D7600E04DFC /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0808BB6C269C4D7600E04DFC /* Preview Assets.xcassets */; };
+		0808BB72269C4D7600E04DFC /* WatchApp.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 0808BB52269C4D7500E04DFC /* WatchApp.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		0808BB83269C504A00E04DFC /* RickAndMortyAPI in Frameworks */ = {isa = PBXBuildFile; productRef = 0808BB82269C504A00E04DFC /* RickAndMortyAPI */; };
+		0808BB85269C505300E04DFC /* RickAndMortyAPI in Frameworks */ = {isa = PBXBuildFile; productRef = 0808BB84269C505300E04DFC /* RickAndMortyAPI */; };
 		08287EE82699D7E400B8C4FC /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08287EE72699D7E400B8C4FC /* ErrorView.swift */; };
 		08478BB4267050CD00C3854C /* RickAndMorty15App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08478BB3267050CD00C3854C /* RickAndMorty15App.swift */; };
 		08478BB6267050CD00C3854C /* CharacterListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08478BB5267050CD00C3854C /* CharacterListView.swift */; };
 		08478BB8267050CD00C3854C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 08478BB7267050CD00C3854C /* Assets.xcassets */; };
 		08478BBB267050CD00C3854C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 08478BBA267050CD00C3854C /* Preview Assets.xcassets */; };
-		08478BC32670513000C3854C /* RickAndMortyAPI in Frameworks */ = {isa = PBXBuildFile; productRef = 08478BC22670513000C3854C /* RickAndMortyAPI */; };
 		08478BC52670515000C3854C /* CharacterListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08478BC42670515000C3854C /* CharacterListViewModel.swift */; };
 		0851172426743F5D002D622A /* DetailCharacterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0851172326743F5D002D622A /* DetailCharacterView.swift */; };
 		0851172726744374002D622A /* CharacterMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0851172626744374002D622A /* CharacterMock.swift */; };
@@ -28,6 +39,20 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		0808BB5C269C4D7600E04DFC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 08478BA8267050CD00C3854C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0808BB59269C4D7500E04DFC;
+			remoteInfo = "WatchApp Extension";
+		};
+		0808BB70269C4D7600E04DFC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 08478BA8267050CD00C3854C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0808BB51269C4D7500E04DFC;
+			remoteInfo = WatchApp;
+		};
 		08511736267637FF002D622A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 08478BA8267050CD00C3854C /* Project object */;
@@ -37,7 +62,45 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		0808BB73269C4D7600E04DFC /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				0808BB72269C4D7600E04DFC /* WatchApp.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0808BB76269C4D7600E04DFC /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				0808BB5B269C4D7600E04DFC /* WatchApp Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		0808BB52269C4D7500E04DFC /* WatchApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WatchApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0808BB54269C4D7500E04DFC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		0808BB5A269C4D7500E04DFC /* WatchApp Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "WatchApp Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0808BB5F269C4D7600E04DFC /* RickAndMorty15App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RickAndMorty15App.swift; sourceTree = "<group>"; };
+		0808BB61269C4D7600E04DFC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		0808BB63269C4D7600E04DFC /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
+		0808BB65269C4D7600E04DFC /* NotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationView.swift; sourceTree = "<group>"; };
+		0808BB67269C4D7600E04DFC /* ComplicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationController.swift; sourceTree = "<group>"; };
+		0808BB69269C4D7600E04DFC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		0808BB6C269C4D7600E04DFC /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		0808BB6E269C4D7600E04DFC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0808BB6F269C4D7600E04DFC /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
+		0808BB81269C504100E04DFC /* RickAndMortyAPI */ = {isa = PBXFileReference; lastKnownFileType = folder; name = RickAndMortyAPI; path = ../../../projects/ios/RickAndMortyAPI; sourceTree = "<group>"; };
 		08287EE72699D7E400B8C4FC /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
 		08478BB0267050CD00C3854C /* RickAndMorty15.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RickAndMorty15.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		08478BB3267050CD00C3854C /* RickAndMorty15App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RickAndMorty15App.swift; sourceTree = "<group>"; };
@@ -62,11 +125,19 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		0808BB57269C4D7500E04DFC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0808BB83269C504A00E04DFC /* RickAndMortyAPI in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		08478BAD267050CD00C3854C /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				08478BC32670513000C3854C /* RickAndMortyAPI in Frameworks */,
+				0808BB85269C505300E04DFC /* RickAndMortyAPI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -80,13 +151,56 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0808BB53269C4D7500E04DFC /* WatchApp */ = {
+			isa = PBXGroup;
+			children = (
+				0808BB54269C4D7500E04DFC /* Assets.xcassets */,
+			);
+			path = WatchApp;
+			sourceTree = "<group>";
+		};
+		0808BB5E269C4D7600E04DFC /* WatchApp Extension */ = {
+			isa = PBXGroup;
+			children = (
+				0808BB5F269C4D7600E04DFC /* RickAndMorty15App.swift */,
+				0808BB61269C4D7600E04DFC /* ContentView.swift */,
+				0808BB63269C4D7600E04DFC /* NotificationController.swift */,
+				0808BB65269C4D7600E04DFC /* NotificationView.swift */,
+				0808BB67269C4D7600E04DFC /* ComplicationController.swift */,
+				0808BB69269C4D7600E04DFC /* Assets.xcassets */,
+				0808BB6E269C4D7600E04DFC /* Info.plist */,
+				0808BB6F269C4D7600E04DFC /* PushNotificationPayload.apns */,
+				0808BB6B269C4D7600E04DFC /* Preview Content */,
+			);
+			path = "WatchApp Extension";
+			sourceTree = "<group>";
+		};
+		0808BB6B269C4D7600E04DFC /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				0808BB6C269C4D7600E04DFC /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		0808BB7E269C4DE000E04DFC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		08478BA7267050CD00C3854C = {
 			isa = PBXGroup;
 			children = (
+				0808BB81269C504100E04DFC /* RickAndMortyAPI */,
 				08FF23852670D8A2000A08C3 /* README.md */,
 				08478BB2267050CD00C3854C /* RickAndMorty15 */,
 				08511733267637FF002D622A /* RickAndMorty15Tests */,
+				0808BB53269C4D7500E04DFC /* WatchApp */,
+				0808BB5E269C4D7600E04DFC /* WatchApp Extension */,
 				08478BB1267050CD00C3854C /* Products */,
+				0808BB7E269C4DE000E04DFC /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -95,6 +209,8 @@
 			children = (
 				08478BB0267050CD00C3854C /* RickAndMorty15.app */,
 				08511732267637FF002D622A /* RickAndMorty15Tests.xctest */,
+				0808BB52269C4D7500E04DFC /* WatchApp.app */,
+				0808BB5A269C4D7500E04DFC /* WatchApp Extension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -206,6 +322,43 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		0808BB51269C4D7500E04DFC /* WatchApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0808BB7A269C4D7600E04DFC /* Build configuration list for PBXNativeTarget "WatchApp" */;
+			buildPhases = (
+				0808BB50269C4D7500E04DFC /* Resources */,
+				0808BB76269C4D7600E04DFC /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0808BB5D269C4D7600E04DFC /* PBXTargetDependency */,
+			);
+			name = WatchApp;
+			productName = WatchApp;
+			productReference = 0808BB52269C4D7500E04DFC /* WatchApp.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		0808BB59269C4D7500E04DFC /* WatchApp Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0808BB79269C4D7600E04DFC /* Build configuration list for PBXNativeTarget "WatchApp Extension" */;
+			buildPhases = (
+				0808BB56269C4D7500E04DFC /* Sources */,
+				0808BB57269C4D7500E04DFC /* Frameworks */,
+				0808BB58269C4D7500E04DFC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "WatchApp Extension";
+			packageProductDependencies = (
+				0808BB82269C504A00E04DFC /* RickAndMortyAPI */,
+			);
+			productName = "WatchApp Extension";
+			productReference = 0808BB5A269C4D7500E04DFC /* WatchApp Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
+		};
 		08478BAF267050CD00C3854C /* RickAndMorty15 */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 08478BBE267050CD00C3854C /* Build configuration list for PBXNativeTarget "RickAndMorty15" */;
@@ -213,14 +366,16 @@
 				08478BAC267050CD00C3854C /* Sources */,
 				08478BAD267050CD00C3854C /* Frameworks */,
 				08478BAE267050CD00C3854C /* Resources */,
+				0808BB73269C4D7600E04DFC /* Embed Watch Content */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				0808BB71269C4D7600E04DFC /* PBXTargetDependency */,
 			);
 			name = RickAndMorty15;
 			packageProductDependencies = (
-				08478BC22670513000C3854C /* RickAndMortyAPI */,
+				0808BB84269C505300E04DFC /* RickAndMortyAPI */,
 			);
 			productName = RickAndMorty15;
 			productReference = 08478BB0267050CD00C3854C /* RickAndMorty15.app */;
@@ -254,6 +409,12 @@
 				LastSwiftUpdateCheck = 1300;
 				LastUpgradeCheck = 1300;
 				TargetAttributes = {
+					0808BB51269C4D7500E04DFC = {
+						CreatedOnToolsVersion = 13.0;
+					};
+					0808BB59269C4D7500E04DFC = {
+						CreatedOnToolsVersion = 13.0;
+					};
 					08478BAF267050CD00C3854C = {
 						CreatedOnToolsVersion = 13.0;
 					};
@@ -273,7 +434,6 @@
 			);
 			mainGroup = 08478BA7267050CD00C3854C;
 			packageReferences = (
-				08478BC12670513000C3854C /* XCRemoteSwiftPackageReference "RickAndMortyAPI" */,
 			);
 			productRefGroup = 08478BB1267050CD00C3854C /* Products */;
 			projectDirPath = "";
@@ -281,11 +441,30 @@
 			targets = (
 				08478BAF267050CD00C3854C /* RickAndMorty15 */,
 				08511731267637FF002D622A /* RickAndMorty15Tests */,
+				0808BB51269C4D7500E04DFC /* WatchApp */,
+				0808BB59269C4D7500E04DFC /* WatchApp Extension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		0808BB50269C4D7500E04DFC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0808BB55269C4D7500E04DFC /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0808BB58269C4D7500E04DFC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0808BB6D269C4D7600E04DFC /* Preview Assets.xcassets in Resources */,
+				0808BB6A269C4D7600E04DFC /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		08478BAE267050CD00C3854C /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -306,6 +485,18 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		0808BB56269C4D7500E04DFC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0808BB64269C4D7600E04DFC /* NotificationController.swift in Sources */,
+				0808BB62269C4D7600E04DFC /* ContentView.swift in Sources */,
+				0808BB68269C4D7600E04DFC /* ComplicationController.swift in Sources */,
+				0808BB60269C4D7600E04DFC /* RickAndMorty15App.swift in Sources */,
+				0808BB66269C4D7600E04DFC /* NotificationView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		08478BAC267050CD00C3854C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -337,6 +528,16 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		0808BB5D269C4D7600E04DFC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0808BB59269C4D7500E04DFC /* WatchApp Extension */;
+			targetProxy = 0808BB5C269C4D7600E04DFC /* PBXContainerItemProxy */;
+		};
+		0808BB71269C4D7600E04DFC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0808BB51269C4D7500E04DFC /* WatchApp */;
+			targetProxy = 0808BB70269C4D7600E04DFC /* PBXContainerItemProxy */;
+		};
 		08511737267637FF002D622A /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 08478BAF267050CD00C3854C /* RickAndMorty15 */;
@@ -345,6 +546,120 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		0808BB74269C4D7600E04DFC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = CPX7FN2K89;
+				GENERATE_INFOPLIST_FILE = YES;
+				IBSC_MODULE = WatchApp_Extension;
+				INFOPLIST_KEY_CFBundleDisplayName = WatchApp;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = dev.erikflores.RickAndMorty15;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = dev.erikflores.RickAndMorty15.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 8.0;
+			};
+			name = Debug;
+		};
+		0808BB75269C4D7600E04DFC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = CPX7FN2K89;
+				GENERATE_INFOPLIST_FILE = YES;
+				IBSC_MODULE = WatchApp_Extension;
+				INFOPLIST_KEY_CFBundleDisplayName = WatchApp;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = dev.erikflores.RickAndMorty15;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = dev.erikflores.RickAndMorty15.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 8.0;
+			};
+			name = Release;
+		};
+		0808BB77269C4D7600E04DFC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"WatchApp Extension/Preview Content\"";
+				DEVELOPMENT_TEAM = CPX7FN2K89;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "WatchApp Extension/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "WatchApp Extension";
+				INFOPLIST_KEY_CLKComplicationPrincipalClass = "$(PRODUCT_MODULE_NAME).ComplicationController";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = dev.erikflores.RickAndMorty15.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 8.0;
+			};
+			name = Debug;
+		};
+		0808BB78269C4D7600E04DFC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"WatchApp Extension/Preview Content\"";
+				DEVELOPMENT_TEAM = CPX7FN2K89;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "WatchApp Extension/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "WatchApp Extension";
+				INFOPLIST_KEY_CLKComplicationPrincipalClass = "$(PRODUCT_MODULE_NAME).ComplicationController";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = dev.erikflores.RickAndMorty15.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 8.0;
+			};
+			name = Release;
+		};
 		08478BBC267050CD00C3854C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -574,6 +889,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		0808BB79269C4D7600E04DFC /* Build configuration list for PBXNativeTarget "WatchApp Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0808BB77269C4D7600E04DFC /* Debug */,
+				0808BB78269C4D7600E04DFC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0808BB7A269C4D7600E04DFC /* Build configuration list for PBXNativeTarget "WatchApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0808BB74269C4D7600E04DFC /* Debug */,
+				0808BB75269C4D7600E04DFC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		08478BAB267050CD00C3854C /* Build configuration list for PBXProject "RickAndMorty15" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -603,21 +936,13 @@
 		};
 /* End XCConfigurationList section */
 
-/* Begin XCRemoteSwiftPackageReference section */
-		08478BC12670513000C3854C /* XCRemoteSwiftPackageReference "RickAndMortyAPI" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/erikfloresq/RickAndMortyAPI.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 0.0.3;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
 /* Begin XCSwiftPackageProductDependency section */
-		08478BC22670513000C3854C /* RickAndMortyAPI */ = {
+		0808BB82269C504A00E04DFC /* RickAndMortyAPI */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 08478BC12670513000C3854C /* XCRemoteSwiftPackageReference "RickAndMortyAPI" */;
+			productName = RickAndMortyAPI;
+		};
+		0808BB84269C505300E04DFC /* RickAndMortyAPI */ = {
+			isa = XCSwiftPackageProductDependency;
 			productName = RickAndMortyAPI;
 		};
 /* End XCSwiftPackageProductDependency section */
