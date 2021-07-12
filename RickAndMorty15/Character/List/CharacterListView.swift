@@ -17,7 +17,17 @@ struct CharacterListView: View {
         NavigationView {
             List {
                 ForEach(viewModel.characters) { character in
-                    CharacterCell(character: character)
+                    NavigationLink(destination: DetailCharacterView(character: character)) {
+                        CharacterCell(character: character)
+                    }
+                    .swipeActions {
+                        Button {
+                            favoriteViewModel.addFavorite(character: character)
+                        } label: {
+                            Image(systemName: "star")
+                            Text("Favorite")
+                        }.tint(Color(.systemYellow))
+                    }
                 }
             }
             .searchable(text: $searchText) {
@@ -25,10 +35,13 @@ struct CharacterListView: View {
                     CharacterCell(character: character)
                 }
             }
+            .refreshable {
+                await viewModel.getCharacter()
+            }
+            .task {
+                await viewModel.getCharacter()
+            }
             .navigationTitle("Rick&Morty")
-        }
-        .task {
-            await viewModel.getCharacter()
         }
     }
 

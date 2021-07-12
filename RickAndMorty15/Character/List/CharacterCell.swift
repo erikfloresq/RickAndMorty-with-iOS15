@@ -22,6 +22,8 @@ struct CharacterCell: View {
                             .transition(.opacity.combined(with: .scale))
                     case .success(let image):
                         image.resizable()
+                            .aspectRatio(contentMode: .fill)
+                            .transition(.opacity.combined(with: .scale))
                     case .failure(let error):
                         ErrorView(error)
                     @unknown default:
@@ -31,13 +33,6 @@ struct CharacterCell: View {
             .frame(width: 100, height: 100)
             .mask(RoundedRectangle(cornerRadius: 16))
             Text(character.name)
-        }.swipeActions {
-            Button {
-                favoriteViewModel.addFavorite(character: character)
-            } label: {
-                Image(systemName: "star")
-                Text("Favorite")
-            }.tint(Color(.systemYellow))
         }
     }
 
